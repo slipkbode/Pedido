@@ -1,0 +1,276 @@
+object PedidoView: TPedidoView
+  Left = 0
+  Top = 0
+  Caption = 'Pedido'
+  ClientHeight = 591
+  ClientWidth = 896
+  Position = OwnerFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  DesignerMasterStyle = 0
+  object lytPedido: TLayout
+    Align = Top
+    HitTest = True
+    Size.Width = 896.000000000000000000
+    Size.Height = 104.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lblNumeroPedido: TLabel
+      StyledSettings = [Family, FontColor]
+      Position.X = 8.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 15.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Pedido:'
+      TabOrder = 5
+    end
+    object edtNumeroPedido: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      CanFocus = False
+      ReadOnly = True
+      TextSettings.Font.Size = 15.000000000000000000
+      Position.X = 64.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Style, FontColor]
+    end
+    object lblCliente: TLabel
+      StyledSettings = [Family, FontColor]
+      Position.X = 168.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 15.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Cliente:'
+      TabOrder = 3
+    end
+    object edtCliente: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      TextSettings.Font.Size = 15.000000000000000000
+      Position.X = 224.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Style, FontColor]
+      KillFocusByReturn = True
+      OnEnter = edtClienteEnter
+      OnExit = edtClienteExit
+      object SearchEdtCliente: TSearchEditButton
+        Touch.InteractiveGestures = [LongTap]
+        CanFocus = False
+        Cursor = crArrow
+        TextSettings.Trimming = None
+        Size.Width = 28.000000000000000000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = SearchEdtClienteClick
+      end
+    end
+    object Panel1: TPanel
+      Padding.Left = 2.000000000000000000
+      Padding.Top = 2.000000000000000000
+      Padding.Right = 2.000000000000000000
+      Padding.Bottom = 2.000000000000000000
+      Position.X = 330.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 387.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      object lblNomeCliente: TLabel
+        Align = Contents
+        StyledSettings = [Family, FontColor]
+        Size.Width = 387.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 15.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 0
+      end
+    end
+    object lblDataEmissao: TLabel
+      StyledSettings = [Family, FontColor]
+      Position.X = 725.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 81.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 15.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Emiss'#227'o:'
+      TabOrder = 4
+    end
+    object deEmissao: TDateEdit
+      Date = 45447.000000000000000000
+      CanFocus = False
+      Position.X = 788.000000000000000000
+      Position.Y = 8.000000000000000000
+      ReadOnly = True
+      Size.Width = 100.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Style, FontColor]
+      TabOrder = 2
+      TextSettings.Font.Size = 15.000000000000000000
+    end
+    object cbLocalizarPedido: TCornerButton
+      Cursor = crHandPoint
+      StyledSettings = [Family, FontColor]
+      Position.X = 702.000000000000000000
+      Position.Y = 49.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 90.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Localizar Pedido'
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.WordWrap = True
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = cbLocalizarPedidoClick
+    end
+    object cbFinalizarPedido: TCornerButton
+      Cursor = crHandPoint
+      StyledSettings = [Family, FontColor]
+      Position.X = 798.000000000000000000
+      Position.Y = 49.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 90.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'Salvar'
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = cbFinalizarPedidoClick
+    end
+  end
+  object grdProduto: TGrid
+    Align = Client
+    CanFocus = True
+    ClipChildren = True
+    Cursor = crHandPoint
+    Size.Width = 896.000000000000000000
+    Size.Height = 437.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 13.000000000000000000
+    TextSettings.Trimming = None
+    StyledSettings = [Family, Style, FontColor]
+    TabOrder = 2
+    Options = [AlternatingRowBackground, Editing, ColumnResize, RowLines, Tabs, Header, AutoDisplacement]
+    OnSelectCell = grdProdutoSelectCell
+    OnDrawColumnCell = grdProdutoDrawColumnCell
+    OnGetValue = grdProdutoGetValue
+    OnSetValue = grdProdutoSetValue
+    OnCellClick = grdProdutoCellClick
+    Viewport.Width = 876.000000000000000000
+    Viewport.Height = 412.000000000000000000
+    object codigo_produto: TIntegerColumn
+      Header = 'C'#243'digo Produto'
+      HeaderSettings.StyledSettings = []
+      HeaderSettings.TextSettings.Font.Size = 14.000000000000000000
+      HeaderSettings.TextSettings.Font.StyleExt = {00070000000000000004000000}
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 122.000000000000000000
+    end
+    object descricao: TStringColumn
+      Header = 'Descri'#231#227'o'
+      HeaderSettings.StyledSettings = []
+      HeaderSettings.TextSettings.Font.Size = 14.000000000000000000
+      HeaderSettings.TextSettings.Font.StyleExt = {00070000000000000004000000}
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 374.000000000000000000
+    end
+    object quantidade: TFloatColumn
+      Header = 'Quantidade'
+      HeaderSettings.StyledSettings = []
+      HeaderSettings.TextSettings.Font.Size = 14.000000000000000000
+      HeaderSettings.TextSettings.Font.StyleExt = {00070000000000000004000000}
+      HeaderSettings.TextSettings.Trimming = Word
+      HeaderSettings.TextSettings.WordWrap = False
+      HeaderSettings.TextSettings.HorzAlign = Center
+    end
+    object valor_unitario: TFloatColumn
+      Header = 'Vlr. Unit'#225'rio'
+      HeaderSettings.StyledSettings = []
+      HeaderSettings.TextSettings.Font.Size = 14.000000000000000000
+      HeaderSettings.TextSettings.Font.StyleExt = {00070000000000000004000000}
+      HeaderSettings.TextSettings.Trimming = Character
+      HeaderSettings.TextSettings.WordWrap = False
+      HeaderSettings.TextSettings.HorzAlign = Trailing
+    end
+    object valor_total: TFloatColumn
+      Header = 'Vlr. Total'
+      HeaderSettings.StyledSettings = []
+      HeaderSettings.TextSettings.Font.Size = 14.000000000000000000
+      HeaderSettings.TextSettings.Font.StyleExt = {00070000000000000004000000}
+      HeaderSettings.TextSettings.Trimming = Character
+      HeaderSettings.TextSettings.WordWrap = False
+      HeaderSettings.TextSettings.HorzAlign = Trailing
+      ReadOnly = True
+    end
+    object botao: TColumn
+      Enabled = False
+      HeaderSettings.TextSettings.WordWrap = False
+      ReadOnly = True
+      Size.Width = 75.000000000000000000
+    end
+  end
+  object Layout2: TLayout
+    Align = Bottom
+    Padding.Left = 2.000000000000000000
+    Padding.Top = 2.000000000000000000
+    Padding.Right = 2.000000000000000000
+    Padding.Bottom = 2.000000000000000000
+    Position.Y = 541.000000000000000000
+    Size.Width = 896.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblTotal: TLabel
+      Align = Right
+      StyledSettings = [Family, FontColor]
+      Position.X = 554.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 198.000000000000000000
+      Size.Height = 46.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.HorzAlign = Trailing
+      Text = 'Total do pedido:'
+      TabOrder = 1
+    end
+    object lblValorTotal: TLabel
+      Align = MostRight
+      StyledSettings = [Family]
+      Position.X = 752.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 142.000000000000000000
+      Size.Height = 46.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.FontColor = xFF239860
+      TextSettings.HorzAlign = Trailing
+      TabOrder = 0
+    end
+  end
+end
